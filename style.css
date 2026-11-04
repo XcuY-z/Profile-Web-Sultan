@@ -1,0 +1,307 @@
+/* Reset Basic & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, #0f2b46 0%, #061626 100%);
+    color: #e0f2fe;
+    overflow-x: hidden;
+}
+
+/* Kustomisasi Cursor */
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00f0ff;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, background-color 0.2s;
+    box-shadow: 0 0 15px #00f0ff;
+}
+
+/* Partikel Gelembung Klik */
+.cursor-bubble {
+    position: fixed;
+    background: rgba(0, 240, 255, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    animation: floatUp 1.5s forwards linear;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-80px) scale(0.3); opacity: 0; }
+}
+
+/* Background & Animasi Emoji Lautan */
+.ocean-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.sea-emoji {
+    position: absolute;
+    bottom: -50px;
+    font-size: 2rem;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.25;
+    animation: swimUp 12s infinite linear;
+}
+
+@keyframes swimUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.35; }
+    90% { opacity: 0.35; }
+    100% {
+        transform: translateY(-115vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    bottom: -100px;
+    animation: bubbleUp 10s infinite linear;
+}
+
+.bubble-1 { width: 40px; height: 40px; left: 10%; animation-duration: 8s; }
+.bubble-2 { width: 80px; height: 80px; left: 50%; animation-duration: 12s; animation-delay: 2s; }
+.bubble-3 { width: 50px; height: 50px; left: 80%; animation-duration: 9s; animation-delay: 4s; }
+
+@keyframes bubbleUp {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 0.2; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+nav .logo { font-size: 24px; font-weight: 700; }
+nav .logo span { color: #00f0ff; }
+nav ul { display: flex; list-style: none; }
+nav ul li a {
+    color: #e0f2fe;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+nav ul li a:hover { color: #00f0ff; text-shadow: 0 0 10px #00f0ff; }
+
+/* Hero Section & Info */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 { font-size: 3.2rem; margin-bottom: 10px; }
+.hero-content .highlight { color: #00f0ff; text-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+.hero-content p { font-size: 1.1rem; color: #94a3b8; }
+
+.personal-info {
+    margin: 20px 0 35px 0;
+    background: rgba(15, 43, 70, 0.4);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: inline-block;
+    border: 1px solid rgba(0, 240, 255, 0.1);
+}
+.personal-info p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin: 5px 0;
+}
+
+.btn-dive {
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid #00f0ff;
+    color: #00f0ff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+.btn-dive:hover {
+    background: #00f0ff;
+    color: #061626;
+    box-shadow: 0 0 25px #00f0ff;
+}
+
+/* Sections General */
+.about-section, .skills-section, .projects-section {
+    padding: 90px 8%;
+    text-align: center;
+}
+h2 { font-size: 2.3rem; margin-bottom: 40px; color: #00f0ff; }
+
+.about-card {
+    background: rgba(15, 43, 70, 0.5);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+}
+
+/* Skills Section Design */
+.skills-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(15, 43, 70, 0.5);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    padding: 35px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+.skill-box {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00bdcc 0%, #00f0ff 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.project-card {
+    background: rgba(15, 43, 70, 0.5);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    transition: 0.4s;
+}
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #00f0ff;
+    box-shadow: 0 15px 35px rgba(0, 240, 255, 0.2);
+}
+.project-card h3 { margin-bottom: 12px; color: #fff; }
+.project-card p { font-size: 0.95rem; color: #94a3b8; margin-bottom: 20px; }
+.tag {
+    background: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 35px;
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+    background: #061626;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+/* Background & Pengaturan Emoji Lautan */
+.ocean-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.sea-emoji {
+    position: absolute;
+    font-size: 2rem;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+}
+
+/* --- Variasi 4 Arah Gerakan Baru --- */
+
+/* 1. Gerak ke Atas (Mengapung) */
+@keyframes swimToTop {
+    0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) translateX(50px) rotate(360deg); opacity: 0; }
+}
+
+/* 2. Gerak ke Bawah (Menyelam) */
+@keyframes swimToBottom {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(110vh) translateX(-50px) rotate(-360deg); opacity: 0; }
+}
+
+/* 3. Gerak dari Kiri ke Kanan */
+@keyframes swimToRight {
+    0% { transform: translateX(-10vw) translateY(0) scaleX(1); opacity: 0; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
+    100% { transform: translateX(110vw) translateY(-60px) scaleX(1); opacity: 0; }
+}
+
+/* 4. Gerak dari Kanan ke Kiri (Emoji Dibalik agar Menghadap Kiri) */
+@keyframes swimToLeft {
+    0% { transform: translateX(110vw) translateY(0) scaleX(-1); opacity: 0; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
+    100% { transform: translateX(-10vw) translateY(60px) scaleX(-1); opacity: 0; }
+}
